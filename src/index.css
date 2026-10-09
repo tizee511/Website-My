@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-arabic: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-latin: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html[lang="ar"] {
+    font-family: var(--font-arabic);
+  }
+
+  html[lang="en"] {
+    font-family: var(--font-latin);
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.35);
+}
+:not(.dark) ::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 9999px;
+}
+
+/* Print utilities for resume */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+
