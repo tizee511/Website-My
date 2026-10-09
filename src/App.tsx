@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { AvatarProvider } from './context/AvatarContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -17,6 +18,7 @@ import { Education } from './components/Education';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
+import { PhotoModal } from './components/PhotoModal';
 
 function PortfolioMain() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -70,6 +72,9 @@ function PortfolioMain() {
 
       {/* Interactive Curriculum Vitae Modal */}
       <ResumeModal isOpen={isResumeOpen} onClose={handleCloseResume} />
+
+      {/* Profile Photo Customizer & Replacement Modal */}
+      <PhotoModal />
     </div>
   );
 }
@@ -78,7 +83,9 @@ export default function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <PortfolioMain />
+        <AvatarProvider>
+          <PortfolioMain />
+        </AvatarProvider>
       </LanguageProvider>
     </ThemeProvider>
   );

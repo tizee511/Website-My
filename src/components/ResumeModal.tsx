@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useAvatar } from '../context/AvatarContext';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 import { X, Printer, Download, Mail, MapPin, Globe, Github, Linkedin, ExternalLink } from 'lucide-react';
 
@@ -10,6 +11,7 @@ interface ResumeModalProps {
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
   const { lang, t, isRTL } = useLanguage();
+  const { avatar } = useAvatar();
   const profile = PORTFOLIO_DATA.profile;
 
   useEffect(() => {
@@ -81,18 +83,25 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         <div className="max-h-[82vh] overflow-y-auto p-6 sm:p-10 space-y-8 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 print:p-0 print:max-h-none">
           {/* Resume Header */}
           <div className="border-b border-slate-200 dark:border-slate-800 pb-6 space-y-3">
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                  {name}
-                </h1>
-                <p className="text-base font-semibold text-sky-600 dark:text-sky-400 mt-1">
-                  {role}
-                </p>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <img
+                  src={avatar}
+                  alt={name}
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border border-slate-200 dark:border-slate-700 shadow-xs shrink-0"
+                />
+                <div>
+                  <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                    {name}
+                  </h1>
+                  <p className="text-base font-semibold text-sky-600 dark:text-sky-400 mt-0.5">
+                    {role}
+                  </p>
+                </div>
               </div>
-              <div className="text-xs font-mono text-slate-500 dark:text-slate-400 sm:text-end">
-                <div>{location}</div>
-                <div className="text-sky-600 dark:text-sky-400 font-semibold">3+ {isRTL ? 'سنوات خبرة' : 'Years Experience'}</div>
+              <div className="text-xs font-mono text-slate-500 dark:text-slate-400 sm:text-end shrink-0">
+                <div>{isRTL ? profile.addressAr : profile.addressEn}</div>
+                <div className="text-sky-600 dark:text-sky-400 font-semibold">{profile.phone}</div>
               </div>
             </div>
 
@@ -103,6 +112,10 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <span>{profile.email}</span>
               </span>
               <span aria-hidden="true">·</span>
+              <span className="flex items-center gap-1">
+                <span>{profile.phone}</span>
+              </span>
+              <span aria-hidden="true">·</span>
               <a
                 href={profile.githubUrl}
                 target="_blank"
@@ -110,7 +123,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 className="flex items-center gap-1 hover:text-sky-500"
               >
                 <Github className="w-3.5 h-3.5 text-slate-700 dark:text-slate-300" />
-                <span>github.com/tizee511</span>
+                <span>GitHub</span>
               </a>
               <span aria-hidden="true">·</span>
               <a
@@ -120,7 +133,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 className="flex items-center gap-1 hover:text-sky-500"
               >
                 <Linkedin className="w-3.5 h-3.5 text-sky-600" />
-                <span>LinkedIn Profile</span>
+                <span>LinkedIn</span>
               </a>
             </div>
           </div>
@@ -128,50 +141,34 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Professional Summary */}
           <div className="space-y-2">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 pb-1">
-              {isRTL ? 'الملخص المهني' : 'Professional Summary'}
+              {isRTL ? 'الملخص المهني (Professional Summary)' : 'Professional Summary'}
             </h2>
             <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
               {summary}
             </p>
           </div>
 
-          {/* Core Technical Capabilities */}
+          {/* Technical Skills */}
           <div className="space-y-3">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 pb-1">
-              {isRTL ? 'القدرات والمهارات التقنية' : 'Core Technical Stack'}
+              {isRTL ? 'المهارات التقنية (Technical Skills)' : 'Technical Skills'}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-              <div className="space-y-1">
-                <span className="font-bold text-slate-900 dark:text-white">
-                  {isRTL ? 'الواجهة الخلفية:' : 'Backend & Architecture:'}
-                </span>
-                <p className="text-slate-600 dark:text-slate-400 font-mono">
-                  PHP Native, Laravel, RESTful APIs, OOP, Design Patterns, Livewire
-                </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800">
+                <span className="font-bold text-slate-900 dark:text-white">PHP & Laravel:</span>
+                <p className="text-slate-600 dark:text-slate-400 font-mono mt-0.5">PHP, Laravel, Laravel Sanctum, MVC Architecture, RESTful APIs</p>
               </div>
-              <div className="space-y-1">
-                <span className="font-bold text-slate-900 dark:text-white">
-                  {isRTL ? 'الواجهة الأمامية:' : 'Frontend & UI:'}
-                </span>
-                <p className="text-slate-600 dark:text-slate-400 font-mono">
-                  Tailwind CSS, Alpine.js, JavaScript (ES6+), HTML5, Responsive UI, Blade
-                </p>
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800">
+                <span className="font-bold text-slate-900 dark:text-white">Databases:</span>
+                <p className="text-slate-600 dark:text-slate-400 font-mono mt-0.5">SQL & MySQL Database Design, Relational Schemas, Transactions</p>
               </div>
-              <div className="space-y-1">
-                <span className="font-bold text-slate-900 dark:text-white">
-                  {isRTL ? 'قواعد البيانات:' : 'Databases:'}
-                </span>
-                <p className="text-slate-600 dark:text-slate-400 font-mono">
-                  MySQL, Schema Normalization, Query Indexing, ACID Transactions, ER Modeling
-                </p>
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800">
+                <span className="font-bold text-slate-900 dark:text-white">Frontend & UI:</span>
+                <p className="text-slate-600 dark:text-slate-400 font-mono mt-0.5">JavaScript, HTML & CSS, Tailwind CSS, UI/UX Design, Photoshop</p>
               </div>
-              <div className="space-y-1">
-                <span className="font-bold text-slate-900 dark:text-white">
-                  {isRTL ? 'البيئة والتشغيل:' : 'DevOps & Tooling:'}
-                </span>
-                <p className="text-slate-600 dark:text-slate-400 font-mono">
-                  Docker, Docker Compose, Git, GitHub, Composer, Nginx, Linux CLI
-                </p>
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800">
+                <span className="font-bold text-slate-900 dark:text-white">Version Control:</span>
+                <p className="text-slate-600 dark:text-slate-400 font-mono mt-0.5">Git & GitHub, Composer</p>
               </div>
             </div>
           </div>
@@ -179,9 +176,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Practical Work Experience */}
           <div className="space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 pb-1">
-              {isRTL ? 'الخبرات المهنية العملية' : 'Work Experience'}
+              {isRTL ? 'الخبرة العملية (Experience)' : 'Experience'}
             </h2>
-            <div className="space-y-5">
+            <div className="space-y-4">
               {PORTFOLIO_DATA.experience.map((exp) => {
                 const expRole = isRTL ? exp.role.ar : exp.role.en;
                 const expCompany = isRTL ? exp.companyOrContext.ar : exp.companyOrContext.en;
@@ -189,18 +186,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 const expResponsibilities = isRTL ? exp.responsibilities.ar : exp.responsibilities.en;
 
                 return (
-                  <div key={exp.id} className="space-y-2">
-                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between text-xs">
+                  <div key={exp.id} className="space-y-2 p-3.5 rounded-xl bg-slate-50/70 dark:bg-slate-950/40 border border-slate-200/60 dark:border-slate-800">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between text-xs gap-1">
                       <div>
                         <span className="font-bold text-slate-900 dark:text-white text-sm">
                           {expRole}
                         </span>
-                        <span className="text-slate-500 dark:text-slate-400 font-medium ms-1">
-                          — {expCompany}
+                        <span className="text-sky-600 dark:text-sky-400 font-semibold ms-1">
+                          | {expCompany}
                         </span>
                       </div>
-                      <span className="font-mono text-slate-500 dark:text-slate-400">
-                        {expPeriod}
+                      <span className="font-mono text-slate-500 dark:text-slate-400 shrink-0">
+                        ({expPeriod})
                       </span>
                     </div>
 
@@ -215,20 +212,61 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
           </div>
 
+          {/* Selected Projects */}
+          <div className="space-y-3">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 pb-1">
+              {isRTL ? 'المشاريع المعتمدة (Selected Projects)' : 'Selected Projects'}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              {PORTFOLIO_DATA.projects.map((proj) => (
+                <div key={proj.id} className="p-3 rounded-xl bg-slate-50/70 dark:bg-slate-950/40 border border-slate-200/60 dark:border-slate-800 space-y-1">
+                  <div className="font-bold text-slate-900 dark:text-white">
+                    {isRTL ? proj.title.ar : proj.title.en}
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-400 text-2xs leading-relaxed">
+                    {isRTL ? proj.shortDescription.ar : proj.shortDescription.en}
+                  </p>
+                  <div className="font-mono text-2xs text-sky-600 dark:text-sky-400 pt-1">
+                    Tech: {proj.technologies.slice(0, 4).join(', ')}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Education & Qualifications */}
           <div className="space-y-3">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 pb-1">
-              {isRTL ? 'التعليم والمؤهلات' : 'Education & Qualifications'}
+              {isRTL ? 'التعليم (Education)' : 'Education'}
             </h2>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {PORTFOLIO_DATA.education.map((edu) => (
-                <div key={edu.id} className="text-xs">
+                <div key={edu.id} className="p-3 rounded-xl bg-slate-50/70 dark:bg-slate-950/40 border border-slate-200/60 dark:border-slate-800 text-xs">
                   <div className="font-bold text-slate-900 dark:text-white">
-                    {isRTL ? edu.degree.ar : edu.degree.en}
+                    {isRTL ? edu.degree.ar : edu.degree.en} – {isRTL ? edu.institution.ar : edu.institution.en}
                   </div>
-                  <div className="text-slate-500 dark:text-slate-400">
-                    {isRTL ? edu.institution.ar : edu.institution.en} · {isRTL ? edu.period.ar : edu.period.en}
+                  <div className="text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                    {isRTL ? edu.period.ar : edu.period.en}
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Certifications */}
+          <div className="space-y-3">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 pb-1">
+              {isRTL ? 'الشهادات المعتمدة (Certifications)' : 'Certifications'}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              {PORTFOLIO_DATA.certifications.map((cert) => (
+                <div key={cert.id} className="p-2.5 rounded-lg bg-slate-50/70 dark:bg-slate-950/40 border border-slate-200/60 dark:border-slate-800 flex items-center justify-between">
+                  <span className="font-semibold text-slate-900 dark:text-white">
+                    • {isRTL ? cert.name.ar : cert.name.en}
+                  </span>
+                  <span className="font-mono text-slate-500 dark:text-slate-400 text-2xs ms-2">
+                    ({cert.year})
+                  </span>
                 </div>
               ))}
             </div>
@@ -237,13 +275,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Spoken Languages */}
           <div className="space-y-2">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 border-b border-slate-100 dark:border-slate-800 pb-1">
-              {isRTL ? 'اللغات' : 'Languages'}
+              {isRTL ? 'اللغات (Languages)' : 'Languages'}
             </h2>
             <div className="flex flex-wrap gap-4 text-xs text-slate-700 dark:text-slate-300">
               {profile.spokenLanguages.map((l, idx) => (
                 <span key={idx}>
                   <strong className="text-slate-900 dark:text-white">
-                    {isRTL ? l.nameAr : l.nameEn}:
+                    • {isRTL ? l.nameAr : l.nameEn}:
                   </strong>{' '}
                   {isRTL ? l.levelAr : l.levelEn}
                 </span>

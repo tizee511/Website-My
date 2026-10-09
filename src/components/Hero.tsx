@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useAvatar } from '../context/AvatarContext';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin, Code2, Database, Layers, ShieldCheck, FileText, Camera, RefreshCw } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin, Code2, Database, Layers, ShieldCheck, FileText, Camera, RefreshCw, Sparkles, SlidersHorizontal } from 'lucide-react';
 
 interface HeroProps {
   onOpenResume: () => void;
@@ -9,54 +10,8 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   const { lang, t, isRTL } = useLanguage();
+  const { avatar, openPhotoModal, isCustom, resetAvatar } = useAvatar();
   const profile = PORTFOLIO_DATA.profile;
-
-  const [currentAvatar, setCurrentAvatar] = useState<string>(() => {
-    try {
-      const saved = localStorage.getItem('custom_developer_photo');
-      if (saved) return saved;
-    } catch {
-      // ignore
-    }
-    return profile.avatarImage;
-  });
-
-  const [hasCustomAvatar, setHasCustomAvatar] = useState<boolean>(() => {
-    try {
-      return Boolean(localStorage.getItem('custom_developer_photo'));
-    } catch {
-      return false;
-    }
-  });
-
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        if (typeof reader.result === 'string') {
-          setCurrentAvatar(reader.result);
-          setHasCustomAvatar(true);
-          try {
-            localStorage.setItem('custom_developer_photo', reader.result);
-          } catch {
-            // storage full
-          }
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleResetPhoto = () => {
-    setCurrentAvatar(profile.avatarImage);
-    setHasCustomAvatar(false);
-    try {
-      localStorage.removeItem('custom_developer_photo');
-    } catch {
-      // ignore
-    }
-  };
 
   const fullName = isRTL ? profile.nameAr : profile.nameEn;
   const role = isRTL ? profile.roleAr : profile.roleEn;
@@ -78,7 +33,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">/</span>
               <span className="inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300">
                 <MapPin className="w-3.5 h-3.5 text-rose-500" />
-                <span>{location}</span>
+                <span>{isRTL ? profile.addressAr : profile.addressEn}</span>
               </span>
             </div>
 
@@ -166,54 +121,87 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           </div>
 
           {/* Visual Portrait Column */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-end space-y-3">
-            <div className="relative group w-full max-w-sm sm:max-w-md aspect-square rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 shadow-md">
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-end space-y-3.5">
+            <div
+              className="relative group w-full max-w-sm sm:max-w-md aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-xl ring-1 ring-sky-500/20 cursor-pointer"
+              onClick={openPhotoModal}
+              title={isRTL ? 'انقر لتغيير أو تخصيص صورتك الشخصية' : 'Click to change or customize your photo'}
+            >
               <img
-                src={currentAvatar}
+                src={avatar}
                 alt={`${fullName} - Full-Stack Developer`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-300"
                 loading="eager"
                 referrerPolicy="no-referrer"
               />
-              {/* Subtle Frame Scrim */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
               
               {/* Badge Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 text-white text-xs flex items-center justify-between pointer-events-none">
-                <span className="font-medium bg-slate-900/80 px-2.5 py-1 rounded-md backdrop-blur-xs border border-white/10">
-                  {isRTL ? 'مهندس برمجيات معتمد' : 'Verified Software Engineer'}
+              <div className="absolute bottom-3 left-3 right-3 text-white text-xs flex items-center justify-between pointer-events-none">
+                <span className="font-medium bg-slate-950/80 px-2.5 py-1 rounded-md backdrop-blur-xs border border-white/15 text-slate-200">
+                  {isRTL ? 'م. نشوان حاتم • Full Stack' : 'Eng. Nashwan Hatem • Full Stack'}
                 </span>
-                <span className="font-mono text-sky-300 bg-slate-900/80 px-2.5 py-1 rounded-md backdrop-blur-xs border border-white/10">
-                  3+ Yrs Exp
+                <span className="font-mono text-sky-400 bg-slate-950/80 px-2.5 py-1 rounded-md backdrop-blur-xs border border-sky-500/30 font-semibold">
+                  2+ Yrs Exp
                 </span>
               </div>
 
-              {/* Direct Photo Upload Overlay Action */}
-              <div className="absolute top-3 right-3 opacity-90 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
-                <label
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 text-2xs font-semibold rounded-md bg-slate-900/80 backdrop-blur-xs text-white border border-white/20 hover:bg-slate-900 cursor-pointer transition-colors shadow-xs"
-                  title={isRTL ? 'رفع أو استبدال صورتك الأصلية مباشرة' : 'Upload or replace your custom original photo'}
+              {/* Hover Overlay Hint */}
+              <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/90 text-white text-xs font-semibold border border-white/20 backdrop-blur-xs shadow-lg">
+                  <Camera className="w-4 h-4 text-sky-400" />
+                  <span>{isRTL ? 'انقر لتغيير أو رفع صورتك' : 'Click to change or upload photo'}</span>
+                </span>
+              </div>
+
+              {/* Quick Action Button in Top Corner */}
+              <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
+                <button
+                  type="button"
+                  onClick={openPhotoModal}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 text-2xs font-semibold rounded-md bg-slate-900/85 backdrop-blur-xs text-white border border-white/20 hover:bg-slate-900 hover:border-sky-400/50 cursor-pointer transition-colors shadow-xs"
+                  title={isRTL ? 'فتح نافذة تخصيص واستبدال الصورة' : 'Open photo manager'}
                 >
                   <Camera className="w-3.5 h-3.5 text-sky-400" />
-                  <span>{isRTL ? 'تغيير الصورة' : 'Upload Photo'}</span>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handlePhotoUpload}
-                    className="hidden"
-                  />
-                </label>
-                {hasCustomAvatar && (
+                  <span>{isRTL ? 'تغيير الصورة' : 'Change Photo'}</span>
+                </button>
+                {isCustom && (
                   <button
                     type="button"
-                    onClick={handleResetPhoto}
-                    className="p-1 rounded-md bg-slate-900/80 backdrop-blur-xs text-slate-300 hover:text-white border border-white/20 hover:bg-slate-900 cursor-pointer transition-colors"
-                    title={isRTL ? 'استعادة الصورة الافتراضية' : 'Reset to default image'}
+                    onClick={resetAvatar}
+                    className="p-1 rounded-md bg-slate-900/85 backdrop-blur-xs text-slate-300 hover:text-white border border-white/20 hover:bg-slate-900 cursor-pointer transition-colors"
+                    title={isRTL ? 'استعادة الصورة الرسمية' : 'Reset to default image'}
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
                   </button>
                 )}
               </div>
+            </div>
+
+            {/* Prominent Photo Control Bar Below the Card */}
+            <div className="w-full max-w-sm sm:max-w-md flex flex-wrap items-center justify-between gap-2 px-1">
+              <button
+                type="button"
+                onClick={openPhotoModal}
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-800 text-xs font-medium transition-colors cursor-pointer"
+              >
+                <SlidersHorizontal className="w-3.5 h-3.5 text-sky-500" />
+                <span>{isRTL ? 'تخصيص / استبدال الصورة الشخصية' : 'Customize / Replace Photo'}</span>
+              </button>
+
+              {isCustom ? (
+                <button
+                  type="button"
+                  onClick={resetAvatar}
+                  className="inline-flex items-center gap-1.5 text-2xs font-semibold text-rose-500 dark:text-rose-400 hover:underline cursor-pointer"
+                >
+                  <RefreshCw className="w-3 h-3" />
+                  <span>{isRTL ? 'استعادة الافتراضية' : 'Reset Default'}</span>
+                </button>
+              ) : (
+                <span className="text-3xs font-mono text-slate-400 dark:text-slate-500">
+                  {isRTL ? 'قابلة للاستبدال بملف أو رابط' : 'Upload or URL supported'}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -228,10 +216,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <span className="text-xs font-mono font-bold text-slate-400">01</span>
               </div>
               <div className="text-2xl font-extrabold text-slate-900 dark:text-white font-mono tabular-nums">
-                3+ {isRTL ? 'سنوات' : 'Years'}
+                2+ {isRTL ? 'سنوات' : 'Years'}
               </div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                {isRTL ? 'خبرة عملية متراكمة في هندسة الويب' : 'Practical web engineering experience'}
+                {isRTL ? 'خبرة عملية موجهة بالنتائج في بناء حلول الويب' : 'Results-driven web solutions experience'}
               </div>
             </div>
 
@@ -242,10 +230,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <span className="text-xs font-mono font-bold text-slate-400">02</span>
               </div>
               <div className="text-2xl font-extrabold text-slate-900 dark:text-white font-mono">
-                TALL & PHP
+                PHP & Laravel
               </div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                {isRTL ? 'إتقان Tailwind, Alpine, Laravel, Livewire' : 'Deep native mastery & reactive architecture'}
+                {isRTL ? 'بناء أنظمة متكاملة وكود نظيف وآمن' : 'Clean, secure code & high-performance systems'}
               </div>
             </div>
 
@@ -256,10 +244,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <span className="text-xs font-mono font-bold text-slate-400">03</span>
               </div>
               <div className="text-2xl font-extrabold text-slate-900 dark:text-white font-mono">
-                MySQL & ACID
+                SQL & MySQL
               </div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                {isRTL ? 'تطبيع المخططات وهندسة الاستعلامات' : 'Relational schema design & indexing'}
+                {isRTL ? 'تصميم قواعد البيانات والمخططات العلائقية' : 'Relational schema design & optimization'}
               </div>
             </div>
 
@@ -270,10 +258,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <span className="text-xs font-mono font-bold text-slate-400">04</span>
               </div>
               <div className="text-2xl font-extrabold text-slate-900 dark:text-white font-mono">
-                Docker & LEMP
+                MVC & Sanctum
               </div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                {isRTL ? 'بيئات تشغيل معزولة ومستقرة' : 'Reproducible containers & steady ops'}
+                {isRTL ? 'معمارية MVC وتأمين واجهات RESTful APIs' : 'MVC architecture & secure RESTful APIs'}
               </div>
             </div>
           </div>

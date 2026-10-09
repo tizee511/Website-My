@@ -144,7 +144,41 @@ export const Contact: React.FC<ContactProps> = ({ selectedServiceKey }) => {
               </div>
             </div>
 
-            {/* Location & Response Time */}
+            {/* Direct Phone & WhatsApp Card */}
+            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 shadow-2xs">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                  {isRTL ? 'الهاتف المباشر والواتساب' : 'Phone & WhatsApp'}
+                </span>
+                <span className="text-2xs font-mono font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded-sm">
+                  {isRTL ? 'متاح' : 'Available'}
+                </span>
+              </div>
+
+              <div className="font-mono text-base font-bold text-slate-900 dark:text-white tracking-wider">
+                {profile.phone}
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <a
+                  href={`tel:${profile.phone}`}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-colors"
+                >
+                  <span>{isRTL ? 'اتصال هاتف' : 'Call Phone'}</span>
+                </a>
+                <a
+                  href={`https://wa.me/967739868057`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition-colors"
+                >
+                  <span>WhatsApp</span>
+                  <ArrowUpRight className={`w-3.5 h-3.5 ${isRTL ? 'rotate-[-90deg]' : ''}`} />
+                </a>
+              </div>
+            </div>
+
+            {/* Location & Address */}
             <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 shadow-2xs">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                 <MapPin className="w-4 h-4 text-rose-500" />
@@ -152,12 +186,12 @@ export const Contact: React.FC<ContactProps> = ({ selectedServiceKey }) => {
               </div>
 
               <div className="text-base font-bold text-slate-900 dark:text-white">
-                {isRTL ? profile.locationAr : profile.locationEn}
+                {isRTL ? profile.addressAr : profile.addressEn}
               </div>
 
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                 {isRTL
-                  ? 'متاحة للتعاون المهني والعقود البرمجية عن بُعد أو محليًا، مع استجابة سريعة للرسائل خلال 24 ساعة.'
+                  ? 'متاح للتعاون المهني والعقود البرمجية عن بُعد أو محليًا، مع استجابة سريعة للرسائل خلال 24 ساعة.'
                   : 'Available for remote contract development or on-site consulting with swift turnaround times within 24 hours.'}
               </p>
             </div>

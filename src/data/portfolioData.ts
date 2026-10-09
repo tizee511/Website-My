@@ -143,28 +143,34 @@ export interface EducationItem {
 
 export const PORTFOLIO_DATA = {
   profile: {
-    nameAr: "م. نشوان قائد غالب حاتم",
-    nameEn: "Eng. Nashwan Hatem",
+    nameAr: "م. نشوان حاتم",
+    nameEn: "Nashwan Hatem",
+    fullNameAr: "نشوان قائد غالب حاتم",
+    fullNameEn: "Nashwan Qiad Ghalib Hatem",
     shortNameAr: "م. نشوان حاتم",
-    shortNameEn: "Eng. Nashwan Hatem",
-    roleAr: "مهندس ومطوّر نظم وتطبيقات ويب (Full-Stack Developer)",
-    roleEn: "Full-Stack Developer & Systems Specialist",
-    specializationAr: "Web Development & Systems ⚙️ PHP Native • TALL • MySQL • Docker | Building scalable systems",
-    specializationEn: "Web Development & Systems ⚙️ PHP Native • TALL • MySQL • Docker | Building scalable systems",
-    taglineAr: "بناء تطبيقات الويب الحديثة. أتمتة مسارات العمل. إنشاء حلول رقمية رصينة وموثوقة وقابلة للتوسع (BUILD • SOLVE • IMPROVE).",
-    taglineEn: "Building Web Applications. Automating Workflows. Creating Digital Solutions that scale (BUILD • SOLVE • IMPROVE).",
-    summaryAr: "مهندس برمجيات ومطوّر Full-Stack بخبرة 3 سنوات عملية متخصصة في هندسة تطبيقات الويب النظيفة وبناء الأنظمة المؤسسية. أركز بعمق على كفاءة قواعد بيانات MySQL، وحزمة TALL (Tailwind, Alpine.js, Laravel, Livewire)، وكتابة PHP Native رصين، وأتمتة بيئات العمل عبر Docker، وتطبيق مبادئ Clean Code وSystem Design لتحويل الاحتياجات المعقدة إلى برمجيات سلسة وسريعة.",
-    summaryEn: "Full-Stack Software Engineer with 3 years of hands-on experience specializing in architecting resilient web applications and business systems. Deeply focused on MySQL efficiency, the modern TALL stack (Tailwind, Alpine.js, Laravel, Livewire), robust native PHP patterns, Docker containerization, and applying Clean Code and System Design principles.",
-    locationAr: "اليمن، صنعاء",
-    locationEn: "Sana'a, Yemen",
-    email: "nashwanqiad@gmail.com",
+    shortNameEn: "Nashwan Hatem",
+    roleAr: "Web Developer | مطوّر ويب ونظم متكاملة",
+    roleEn: "Web Developer & Software Engineer",
+    specializationAr: "Web Development & Systems ⚙️ PHP • Laravel • MySQL • Tailwind CSS • RESTful APIs",
+    specializationEn: "Web Development & Systems ⚙️ PHP • Laravel • MySQL • Tailwind CSS • RESTful APIs",
+    taglineAr: "بناء تطبيقات الويب المتكاملة وحلول الأعمال الرقمية النظيفة والآمنة (BUILD • SOLVE • IMPROVE).",
+    taglineEn: "A results-driven Web Developer building high-performance, clean, and secure digital software solutions.",
+    summaryAr: "مطوّر ويب متميز وموجه بالنتائج بخبرة عملية تتجاوز سنتين في بناء حلول برمجية متكاملة باستخدام PHP وLaravel. أمتلك خبرة عملية في تطوير أنظمة عالية الأداء مع تركيز قوي على كتابة كود نظيف وآمن، وتقديم تجربة مستخدم سلسة ومتقنة. بارع في تصميم قواعد البيانات وإنشاء واجهات حديثة ومتجاوبة، وأسعى دائمًا لتقديم منتجات رقمية احترافية تمكّن المؤسسات في مسيرة التحول الرقمي.",
+    summaryEn: "A results-driven Web Developer with over two years of experience in building integrated software solutions using PHP / Laravel. Possesses hands-on expertise in developing high-performance systems with a strong focus on writing clean, secure code and delivering a seamless user experience. Proficient in database design and creating modern, responsive user interfaces, consistently striving to deliver professional digital products that empower organizations in their digital transformation journey.",
+    addressAr: "شارع شملان، صنعاء، اليمن",
+    addressEn: "Al-Shamlan St. Sana’a, Yemen",
+    locationAr: "صنعاء، اليمن",
+    locationEn: "Sana’a, Yemen",
+    phone: "+967 739868057",
+    email: "Nashwan0xHatem@gmail.com",
+    secondaryEmail: "nashwanqiad@gmail.com",
     githubUrl: "https://github.com/tizee511",
     linkedinUrl: "https://www.linkedin.com/in/𓆩eng-nashwan-hatem𓅓𓆪-38599b252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    avatarImage: "/src/assets/images/eng_nashwan_exact_photo_1791582899101.jpg",
-    yearsOfExperience: 3,
+    avatarImage: "/src/assets/images/eng_nashwan_identical_face_1791587664261.jpg",
+    yearsOfExperience: 2,
     spokenLanguages: [
-      { nameAr: "العربية", nameEn: "Arabic", levelAr: "اللغة الأم", levelEn: "Native" },
-      { nameAr: "الإنجليزية", nameEn: "English", levelAr: "إتقان مهني وتقني", levelEn: "Professional Technical" }
+      { nameAr: "العربية", nameEn: "Arabic", levelAr: "اللغة الأم (Native)", levelEn: "Native" },
+      { nameAr: "الإنجليزية", nameEn: "English", levelAr: "متوسط (Intermediate)", levelEn: "Intermediate" }
     ],
     resumePdfUrl: "#resume-preview",
     cvAvailable: true,
@@ -174,164 +180,136 @@ export const PORTFOLIO_DATA = {
     {
       id: "backend",
       title: {
-        ar: "هندسة الواجهة الخلفية واللغات",
-        en: "Backend Engineering & Core Languages"
+        ar: "تطوير الواجهة الخلفية واللغات (Backend & Core)",
+        en: "Backend & Core Languages"
       },
       description: {
-        ar: "تطوير منطق الأعمال، معالجة البيانات بكفاءة، وبناء خدمات ويب آمنة وعالية الاعتمادية.",
-        en: "Developing robust business logic, high-throughput data processing, and secure APIs."
+        ar: "برمجة منطق الأعمال، معمارية MVC، وبناء واجهات برمجية RESTful عالية الأمان.",
+        en: "Building robust business logic, MVC architecture, and secure RESTful APIs."
       },
       skills: [
         {
-          name: "PHP (Native & Modern OOP)",
-          level: "Core Mastery",
-          levelAr: "إتقان أساسي",
-          experienceYears: 3,
-          tags: ["PHP 8.x", "OOP", "Design Patterns", "Clean Code"]
-        },
-        {
-          name: "Laravel Framework",
-          level: "Core Mastery",
-          levelAr: "إتقان أساسي",
-          experienceYears: 3,
-          tags: ["MVC", "Eloquent ORM", "Queues & Jobs", "Service Providers", "Middleware"]
-        },
-        {
-          name: "RESTful API Architecture",
-          level: "Advanced",
-          levelAr: "متقدم",
-          experienceYears: 3,
-          tags: ["API Design", "JWT / Sanctum", "Rate Limiting", "JSON Web Services"]
-        },
-        {
-          name: "Livewire",
+          name: "PHP & Laravel Framework",
           level: "Core Mastery",
           levelAr: "إتقان أساسي",
           experienceYears: 2,
-          tags: ["Component State", "Realtime Hydration", "Full-Stack Reactivity"]
+          tags: ["PHP 8.x", "Eloquent ORM", "Routing", "Middleware", "Controllers", "Blade"]
+        },
+        {
+          name: "Laravel Sanctum & Auth",
+          level: "Core Mastery",
+          levelAr: "إتقان أساسي",
+          experienceYears: 2,
+          tags: ["Token Authentication", "API Security", "SPA Auth", "Role Gates"]
+        },
+        {
+          name: "RESTful APIs Architecture",
+          level: "Advanced",
+          levelAr: "متقدم",
+          experienceYears: 2,
+          tags: ["JSON Resources", "API Endpoints", "Postman", "Request Validation"]
+        },
+        {
+          name: "MVC Architecture & Clean Code",
+          level: "Core Mastery",
+          levelAr: "إتقان أساسي",
+          experienceYears: 2,
+          tags: ["Model-View-Controller", "SOLID Principles", "Service Pattern", "Clean Code"]
         }
       ]
     },
     {
       id: "frontend",
       title: {
-        ar: "الواجهات الأمامية والتفاعل",
-        en: "Frontend & Reactive Interfaces"
+        ar: "الواجهات الأمامية وتجربة المستخدم (Frontend & UI)",
+        en: "Frontend & UI Design"
       },
       description: {
-        ar: "تصميم واجهات حديثة وسريعة الاستجابة بأقل كود جافاسكريبت غير ضروري وتوافق تام للشاشات.",
-        en: "Crafting lightweight, responsive interfaces with clean utility styles and agile reactivity."
+        ar: "تصميم واجهات حديثة وسريعة الاستجابة باستخدام Tailwind CSS وجافاسكريبت.",
+        en: "Designing modern, fluid, responsive user interfaces with Tailwind CSS and JavaScript."
       },
       skills: [
         {
           name: "Tailwind CSS",
           level: "Core Mastery",
           levelAr: "إتقان أساسي",
-          experienceYears: 3,
-          tags: ["Fluid Layouts", "Dark / Light Mode", "Design Tokens", "RTL / LTR"]
+          experienceYears: 2,
+          tags: ["Responsive Design", "Utility-First", "Modern Layouts", "Dark / Light"]
         },
         {
-          name: "Alpine.js & Vue.js",
+          name: "JavaScript (ES6+)",
           level: "Advanced",
           levelAr: "متقدم",
           experienceYears: 2,
-          tags: ["Declarative DOM", "Vue 3", "Micro-Interactions", "Transitions", "Reactivity"]
+          tags: ["DOM Manipulation", "Fetch / Ajax", "Event Handling", "Async Operations"]
         },
         {
-          name: "React & Modern UI",
-          level: "Advanced",
-          levelAr: "متقدم",
-          experienceYears: 2,
-          tags: ["Hooks", "Component Lifecycle", "SPA State", "TypeScript"]
-        },
-        {
-          name: "JavaScript (ES6+) & TypeScript",
-          level: "Advanced",
-          levelAr: "متقدم",
-          experienceYears: 3,
-          tags: ["DOM APIs", "Async / Await", "Fetch / Axios", "State Management"]
-        },
-        {
-          name: "Semantic HTML5 & Modern CSS",
+          name: "HTML5 & CSS3",
           level: "Core Mastery",
           levelAr: "إتقان أساسي",
-          experienceYears: 3,
-          tags: ["Accessibility (a11y)", "Responsive Grids", "Flexbox", "Typography"]
+          experienceYears: 2,
+          tags: ["Semantic HTML", "Flexbox", "CSS Grid", "Cross-Browser Compatibility"]
+        },
+        {
+          name: "UI/UX Design & Photoshop",
+          level: "Advanced",
+          levelAr: "متقدم",
+          experienceYears: 2,
+          tags: ["Adobe Photoshop Certified", "Wireframing", "Visual Hierarchy", "Prototyping"]
         }
       ]
     },
     {
       id: "databases",
       title: {
-        ar: "قواعد البيانات وهيكلة النظم",
-        en: "Databases & System Architecture"
+        ar: "قواعد البيانات وإدارة الاستعلامات (SQL & MySQL)",
+        en: "Databases & SQL"
       },
       description: {
-        ar: "تصميم المخططات العلائقية المعقدة، نمذجة البيانات، وفهرسة الاستعلامات لضمان أقصى سرعة.",
-        en: "Designing normalized relational schemas, query tuning, and index optimization."
+        ar: "تصميم المخططات العلائقية، تطبيع الجداول، وتحسين أداء الاستعلامات وسرعتها.",
+        en: "Designing normalized relational schemas, query tuning, and database integrity."
       },
       skills: [
         {
-          name: "MySQL & Relational Design",
+          name: "SQL & MySQL Database Design",
           level: "Core Mastery",
           levelAr: "إتقان أساسي",
-          experienceYears: 3,
-          tags: ["Schema Normalization", "Foreign Keys", "Transactions & ACID", "Stored Procedures"]
+          experienceYears: 2,
+          tags: ["Relational Schema", "Foreign Keys", "Data Normalization", "Migrations"]
         },
         {
-          name: "Query Optimization & Indexing",
+          name: "Database Transactions & ACID",
           level: "Advanced",
           levelAr: "متقدم",
-          experienceYears: 3,
-          tags: ["EXPLAIN Plans", "B-Tree Indexes", "Slow Query Log", "Eager Loading"]
-        },
-        {
-          name: "Data Modeling & Workflows",
-          level: "Advanced",
-          levelAr: "متقدم",
-          experienceYears: 3,
-          tags: ["ER Diagrams", "Workflow Engines", "Audit Trail Logging", "Role-Based Access (RBAC)"]
+          experienceYears: 2,
+          tags: ["Data Integrity", "Transactions", "Eager Loading", "Query Optimization"]
         }
       ]
     },
     {
       id: "devops",
       title: {
-        ar: "الحاويات، الأدوات وبيئة العمل",
-        en: "DevOps, Containerization & Tools"
+        ar: "أدوات التطوير وإدارة الإصدارات (Tools & Git)",
+        en: "Development Tools & Version Control"
       },
       description: {
-        ar: "تأمين بيئات تشغيل متطابقة، إدارة النسخ، والتشغيل الآمن والمستقر للمشاريع.",
-        en: "Reproducible deployment environments, version control hygiene, and steady operations."
+        ar: "إدارة النسخ البرمجية عبر Git وGitHub والعمل وفق معايير برمجية منظمة.",
+        en: "Tracking versions, branching workflows with Git/GitHub, and package hygiene."
       },
       skills: [
         {
-          name: "Docker & Docker Compose",
-          level: "Advanced",
-          levelAr: "متقدم",
-          experienceYears: 2,
-          tags: ["Multi-stage Builds", "Container Orchestration", "Volume Mounts", "LEMP Stacks"]
-        },
-        {
-          name: "Git & Version Control",
+          name: "Git & GitHub",
           level: "Core Mastery",
           levelAr: "إتقان أساسي",
-          experienceYears: 3,
-          tags: ["Branching Workflows", "Merge / Rebase", "Pull Requests", "Code Reviews"]
+          experienceYears: 2,
+          tags: ["Branching", "Commits", "Pull Requests", "Version Control Hygiene"]
         },
         {
-          name: "Composer, NPM & Dependency Hygiene",
+          name: "Composer & NPM Environment",
           level: "Core Mastery",
           levelAr: "إتقان أساسي",
-          experienceYears: 3,
-          tags: ["Package Management", "Autoloading PSR-4", "Build Pipelines", "Vite"]
-        },
-        {
-          name: "Nginx & Linux Server Essentials",
-          level: "Proficient",
-          levelAr: "كفاءة عالية",
           experienceYears: 2,
-          tags: ["Virtual Hosts", "SSL / Let's Encrypt", "Reverse Proxy", "Cron Jobs"]
+          tags: ["Dependency Management", "Autoloading PSR", "Build Scripts", "Vite"]
         }
       ]
     }
@@ -339,182 +317,60 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
-      id: "stockflow-erp",
+      id: "yemen-naql-dashboard",
       title: {
-        ar: "نظام إدارة المخزون وسلاسل التوريد (StockFlow ERP)",
-        en: "StockFlow - Enterprise Inventory & Supply Chain ERP"
+        ar: "لوحة تحكم نظام يمن نقل الإدارية (Yemen Naql System)",
+        en: "Yemen Naql System – Administrative Transport Dashboard"
       },
       shortDescription: {
-        ar: "نظام متكامل لإدارة المخازن المتعددة، تتبع حركة البضائع، ومراقبة الحدود الحرجة للمخزون في الوقت الحقيقي.",
-        en: "A robust multi-warehouse inventory management platform with real-time stock level monitoring and automated requisition workflows."
+        ar: "لوحة تحكم إدارية متكاملة لنظام يمن نقل لإدارة السائقين والعملاء وعمليات الرحلات وتكوين الأسعار وإصدار التقارير الإحصائية (مشروع التخرج).",
+        en: "A comprehensive web-based administrative dashboard for Yemen Naql, enabling management of drivers, customers, trip operations, pricing configurations, and reporting functionalities."
       },
       fullDescription: {
-        ar: "تم بناء هذا النظام لتلبية متطلبات الشركات والمؤسسات التي تدير آلاف الأصناف عبر مخازن جغرافية متعددة. يوفر لوحة تحكم ذكية تمنح الإدارة رؤية شاملة عن حركة الوارد والصادر ومستويات الأمان للمخزون مع تقارير دقيقة وتحليلات بيانية.",
-        en: "Architected for enterprises handling thousands of SKUs across distributed warehouses. The platform delivers real-time stock reconciliation, automated reorder triggers, purchase order workflows, and interactive analytics."
+        ar: "تم تطوير لوحة التحكم الإدارية لنظام يمن نقل لتكون المركز الرئيسي لإدارة وتنظيم حركة النقل البري والعمليات اليومية. تشمل المنظومة إدارة متكاملة لبيانات السائقين، تتبع حسابات العملاء، مراقبة الرحلات النشطة، ضبط تسعيرة المسارات، واستخراج تقارير إدارية وتشغيلية دقيقة تدعم اتخاذ القرار وتزيد من كفاءة الرقابة والمتابعة.",
+        en: "Developed as the central operational nerve for the Yemen Naql transport system. Built to streamline transport management by centralizing driver registries, customer profiles, active dispatch monitoring, dynamic fare calculation matrices, and comprehensive administrative analytics."
       },
       problem: {
-        ar: "كانت المؤسسة تعاني من عدم دقة تتبع المخزون اليدوي، وحدوث عجز متكرر في الأصناف الأساسية دون إنذار مسبق، إلى جانب بطء إصدار التقارير المحاسبية وصعوبة متابعة أذونات الصرف.",
-        en: "Manual spreadsheet records led to inconsistent stock counts, delayed requisition approvals, and unexpected stockouts of high-velocity items without proactive warning alerts."
+        ar: "الحاجة إلى نظام إداري مركزي موحد قادر على متابعة أسطول السائقين وحركة الرحلات وضبط التسعير ومنع تضارب الحجوزات أو غياب التقارير الرقابية الدقيقة.",
+        en: "Fragmented dispatch logistics, lack of real-time monitoring of trip states and driver availability, and the absence of structured reporting and pricing configuration modules."
       },
       solution: {
-        ar: "تصميم نظام مؤسسي موحد مبني على حزمة TALL وقاعدة بيانات MySQL مع معالجة حركات المخزون عبر المعاملات البنكية (Database Transactions) لضمان عدم حدوث تضارب في الكميات، مع واجهات تفاعلية عبر Livewire تتيح الفلترة والبحث الفوري بدون إعادة تحميل الصفحة.",
-        en: "Built a centralized system using Laravel, Livewire, Alpine.js, and MySQL. Enforced strict database transactions and row-locking on critical stock transfers, combined with an instant Livewire search interface and automated daily stock alerts."
-      },
-      category: 'tall',
-      categoryLabel: {
-        ar: "حزمة TALL والنظم المؤسسية",
-        en: "TALL Stack & Systems"
-      },
-      technologies: ["Laravel", "Livewire", "Alpine.js", "Tailwind CSS", "MySQL", "Docker", "Database Transactions"],
-      role: {
-        ar: "مهندسة ومطوّرة كامل المنظومة (Full-Stack Architect)",
-        en: "Full-Stack Architect & Developer"
-      },
-      keyFeatures: {
-        ar: [
-          "إدارة المستودعات المتعددة مع تحويلات داخلية فورية موثقة برقم إذن",
-          "نظام تنبيهات ذكي للأصناف التي تقترب من نقطة إعادة الطلب (Reorder Point)",
-          "تصدير واستيراد مجمّع لبيانات المنتجات بصيغ Excel وPDF",
-          "صلاحيات مستخدمين متعددة المستويات (مدير نظام، أمين مستودع، مسؤول مشتريات)",
-          "سجل تدقيق كامل (Audit Log) لجميع عمليات الصرف والإضافة والتعديل"
-        ],
-        en: [
-          "Multi-location warehouse management with verified inter-branch transfer tickets",
-          "Automated threshold alert system when stock approaches the reorder safety point",
-          "Bulk CSV/Excel batch processing and automated PDF voucher generation",
-          "Role-Based Access Control (RBAC) separating warehouse keepers, purchasers, and executives",
-          "Immutable transaction audit logs for every stock mutation and deduction"
-        ]
-      },
-      technicalChallenges: {
-        ar: "التحدي الأبرز كان معالجة التنافسية (Race Conditions) عند قيام عدة مستخدمين بصرف نفس الصنف في نفس اللحظة. تم حل ذلك باستخدام Pessimistic Locking على مستوى صف قاعدة البيانات وفهرسة مخصصة لجداول الحركات الكبيرة.",
-        en: "Mitigating race conditions when multiple terminal operators simultaneously deducted quantities from the same SKU. Solved using pessimistic row locks in MySQL transactions alongside compound indexing."
-      },
-      results: {
-        ar: "انخفاض بنسبة 95% في الأخطاء المخزنية وتسريع استخراج التقارير الشهرية من ساعات إلى ثوانٍ معدودة.",
-        en: "Reduced inventory discrepancy rate by 95% and lowered month-end reporting time from hours to instantaneous generation."
-      },
-      image: "/src/assets/images/project_erp_systems_1791580655363.jpg",
-      githubUrl: "https://github.com/tizee511",
-      liveUrl: undefined,
-      isFeatured: true
-    },
-    {
-      id: "moderna-commerce",
-      title: {
-        ar: "منصة التجارة الإلكترونية وبوابة المدفوعات (Moderna Luxe)",
-        en: "Moderna Luxe - High-Conversion Commerce & Order Hub"
-      },
-      shortDescription: {
-        ar: "منصة تجارة إلكترونية سريعة التحميل مع سلة شراء تفاعلية، إدارة الكوبونات، والتكامل مع بوابات الدفع الإلكتروني.",
-        en: "A high-performance e-commerce platform featuring an interactive reactive cart, coupon engine, and resilient payment gateway integration."
-      },
-      fullDescription: {
-        ar: "منصة رقمية مخصصة للبيع بالتجزئة مصممة لتقديم تجربة تسوق فائقة السلاسة دون أي تباطؤ. تحتوي على إدارة مرنة لكتالوج المنتجات، إدارة المخزون التلقائي عند إتمام الدفع، ولوحة تحكم شاملة لإدارة طلبات العملاء وحالات الشحن.",
-        en: "A bespoke modern commerce solution engineered for high conversion rates. Features lightning-fast catalogue browsing, dynamic cart state management via Alpine.js, webhook-driven order fulfillment, and automated shipment tracking."
-      },
-      problem: {
-        ar: "بطء استجابة المنصات الجاهزة، صعوبة تخصيص طرق الدفع المحلية والعالمية، وارتفاع معدل التخلي عن سلة الشراء بسبب تعقيد خطوات الدفع.",
-        en: "Bloated off-the-shelf platforms suffered from slow load times, poor mobile UX, and abandoned checkouts due to brittle payment redirection."
-      },
-      solution: {
-        ar: "بناء واجهة مخصصة بالكامل باستخدام Tailwind CSS وAlpine.js لتوفير سرعة استثنائية، وربط خلفي مع PHP/Laravel عبر واجهات RESTful APIs محمية، مع تطبيق نظام Idempotency للمدفوعات لضمان عدم الخصم المزدوج.",
-        en: "Built a streamlined lightweight storefront with Tailwind CSS and Alpine.js, backed by a robust Laravel engine with webhook idempotency keys to ensure zero double-charges during network dropouts."
-      },
-      category: 'ecommerce',
-      categoryLabel: {
-        ar: "التجارة الإلكترونية والمدفوعات",
-        en: "E-Commerce & Payments"
-      },
-      technologies: ["PHP", "Laravel", "Tailwind CSS", "Alpine.js", "MySQL", "Payment Webhooks", "Docker"],
-      role: {
-        ar: "مطوّرة Full-Stack ومسؤولة تكامل المدفوعات",
-        en: "Full-Stack Developer & Payment Integration Lead"
-      },
-      keyFeatures: {
-        ar: [
-          "سلة تسوق عائمة تفاعلية فورية ومزامنة سريعة لحالات المنتجات",
-          "تكامل آمن مع بوابات الدفع ومعالجة الإشعارات الفورية (Webhooks)",
-          "نظام كوبونات وخصومات متقدم مع شروط استحقاق مخصصة",
-          "لوحة إدارة متكاملة لتحديث الكتالوج، وتتبع الشحنات، وطباعة الفواتير",
-          "تصميم متجاوب بالكامل وسريع التحميل على شبكات الهواتف المحمولة"
-        ],
-        en: [
-          "Reactive slide-over cart with instant quantity updates and stock validation",
-          "Resilient payment gateway integrations with secure webhook verification",
-          "Dynamic promo code engine with validation rules and expiration controls",
-          "Comprehensive merchant dashboard for order tracking and automated invoice generation",
-          "Mobile-first responsive layout optimized for low-bandwidth environments"
-        ]
-      },
-      technicalChallenges: {
-        ar: "معالجة انقطاع الاتصال أثناء عودة إشعار البنك (Webhook Retries)؛ تم تنفيذ نظام طوابير (Queue Worker) للتحقق المتقاطع وإعادة المحاولة التلقائية الآمنة.",
-        en: "Handling intermittent connectivity and webhook retries from payment processors. Implemented dedicated queue workers with retry backoff strategies."
-      },
-      results: {
-        ar: "تحقيق زمن تحميل أولي يقل عن 1.1 ثانية ومعدل إتمام دفع سلس للمستخدمين.",
-        en: "Achieved sub-1.1s initial page load time and frictionless checkout completion."
-      },
-      image: "/src/assets/images/project_ecommerce_platform_1791580666034.jpg",
-      githubUrl: "https://github.com/tizee511",
-      liveUrl: undefined,
-      isFeatured: true
-    },
-    {
-      id: "hypervisor-api",
-      title: {
-        ar: "بوابة الواجهات البرمجية ومعالجة المهام الخلفية الموزعة (API Gateway & Queue Engine)",
-        en: "Containerized API Gateway & Async Queue Processing Hub"
-      },
-      shortDescription: {
-        ar: "بنية تحتية لتنظيم حركة الواجهات البرمجية، تحديد معدل الطلبات (Rate Limiting)، وتشغيل المهام الثقيلة في الخلفية داخل حاويات Docker.",
-        en: "A robust micro-services orchestration engine featuring token authentication, rate limiting, and asynchronous background worker queues using Docker."
-      },
-      fullDescription: {
-        ar: "منظومة تقنية مصممة لمعالجة آلاف الطلبات المتزامنة وتوزيع الأحمال. تقوم البوابة بالتحقق من الهويات، فحص صلاحيات الوصول، تحويل الطلبات، وإسناد المهام الشاقة (مثل معالجة الصور وإرسال البريد المجمع وإعداد التقارير الضخمة) إلى عمال خلفيين مستقلين.",
-        en: "An operational infrastructure built to handle concurrent requests reliably. Dispatches compute-heavy tasks into background worker processes, shielding public-facing endpoints from bottlenecks."
-      },
-      problem: {
-        ar: "توقف الخوادم وبطء استجابة واجهات الويب عند تشغيل تقارير ثقيلة أو إرسال آلاف الإشعارات في نفس اللحظة من قبل مستخدمين متعددين.",
-        en: "Monolithic applications hung whenever resource-heavy batch exports or transactional notifications were executed in synchronous HTTP cycles."
-      },
-      solution: {
-        ar: "فصل المهام الثقيلة عن مسار الـ HTTP الرئيسي باستخدام بيئة معزولة داخل Docker، مع جدولة المهام وتحديد سقف الاستهلاك (Rate Throttling) ومراقبة صحة الخادم في الوقت الفعلي.",
-        en: "Isolated background tasks into dedicated Dockerized workers using asynchronous job queues and Redis caching, coupled with token throttling middleware and health-check monitoring."
+        ar: "بناء لوحة تحكم تفاعلية وسريعة الاستجابة باستخدام Laravel وMySQL وTailwind CSS، مع توفير وحدات مخصصة لكل قسم إداري، وتطبيق صلاحيات وصول دقيقة ومؤشرات بيانية واضحة لحركة النقل.",
+        en: "Engineered responsive dashboard interfaces and administrative modules using Laravel, MySQL, and Tailwind CSS to streamline operations, enhance tracking, and enforce role-based administrative authority."
       },
       category: 'systems',
       categoryLabel: {
-        ar: "النظم والبنية التحتية",
-        en: "Systems & Infrastructure"
+        ar: "مشروع التخرج والنظم الإدارية",
+        en: "Graduation Project & Admin Systems"
       },
-      technologies: ["PHP Native", "Laravel", "Docker", "Docker Compose", "MySQL", "Redis", "Nginx", "Linux"],
+      technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "Tailwind CSS", "RESTful APIs", "HTML/CSS"],
       role: {
-        ar: "مهندسة نظم وبنية تحتية خلفية (Backend & DevOps)",
-        en: "Backend & Systems Infrastructure Engineer"
+        ar: "مطوّر لوحة التحكم الإدارية (Administrative Dashboard Developer)",
+        en: "Administrative Dashboard Developer"
       },
       keyFeatures: {
         ar: [
-          "تجهيز بيئة إنتاج معيارية بالكامل باستخدام Docker Compose وNginx",
-          "نظام حماية من الهجمات وتحديد معدل الطلبات (Rate Limiting)",
-          "معالجة غير متزامنة لمهام التصدير والبريد وسجلات التدقيق",
-          "لوحة مراقبة لمؤشرات أداء الحاويات ومعدل استهلاك الذاكرة والمعالج",
-          "تشفير البيانات والتحقق الدقيق من سلامة الترويسات (Headers)"
+          "إدارة وتوثيق بيانات السائقين واعتماد حساباتهم وحالات جاهزيتهم",
+          "إدارة حسابات وسجلات العملاء وسجل الرحلات السابقة",
+          "متابعة وإدارة عمليات الرحلات وحالاتها (قيد التنفيذ، مكتملة، ملغاة)",
+          "تكوين وإعداد مصفوفات الأسعار وسياسات التسعير المرنة",
+          "توليد تقارير إدارية وإحصائية تفصيلية عن العمليات التشغيلية"
         ],
         en: [
-          "Standardized reproducible deployment configuration via Docker Compose & Nginx",
-          "Token-based API rate limiting and protection middleware against request bursts",
-          "Asynchronous job execution for massive reporting, email dispatches, and log rotation",
-          "Operational health status tracking for worker nodes and memory consumption",
-          "Strict payload sanitization and structured JSON error responses"
+          "Driver onboarding, profile verification, and real-time operational status monitoring",
+          "Customer directory and historical journey record management",
+          "Trip dispatch lifecycle management (scheduled, active, completed, canceled)",
+          "Dynamic pricing configuration engine for routes and service tiers",
+          "Automated administrative reporting modules and analytical performance charts"
         ]
       },
       technicalChallenges: {
-        ar: "ضبط استهلاك ذاكرة PHP CLI للعمال الخلفيين الذين يعملون لفترات طويلة (Memory Leaks Prevention) وضمان استئناف المهام في حال تعطل الحاوية دون فقدان البيانات.",
-        en: "Preventing daemon memory creep during 24/7 background worker execution and architecting atomic state recovery on container restarts."
+        ar: "هيكلة تدفق البيانات بحيث تكون لوحة التحكم سريعة في عرض آلاف سجلات الرحلات مع توفير فلاتر متعددة دون التأثير على استقرار قاعدة البيانات.",
+        en: "Structuring relational queries and table indexes to deliver sub-second search and filtering across thousands of active transport dispatch records."
       },
       results: {
-        ar: "استقرار تام بنسبة 99.9% في توفر الخدمات وعدم تأثر سرعة استجابة المستخدمين أثناء المعالجة الثقيلة.",
-        en: "Maintained 99.9% uptime with zero degradation to user HTTP response times during heavy batch export workloads."
+        ar: "تحسين كفاءة الرقابة التشغيلية بنسبة عالية وتوفير واجهة موحدة سهلت إدارة عمليات النقل بالكامل.",
+        en: "Significantly streamlined transport fleet monitoring and provided a unified management dashboard for end-to-end trip operations."
       },
       image: "/src/assets/images/project_api_gateway_1791580677557.jpg",
       githubUrl: "https://github.com/tizee511",
@@ -522,194 +378,337 @@ export const PORTFOLIO_DATA = {
       isFeatured: true
     },
     {
-      id: "portal-automation",
+      id: "invoice-management-system",
       title: {
-        ar: "بوابة العمليات الإدارية وأتمتة مسارات العمل (Operations Automation Portal)",
-        en: "Operations Automation & Workflow Portal"
+        ar: "نظام إدارة الفواتير والمدفوعات (Invoice Management System)",
+        en: "Invoice Management System"
       },
       shortDescription: {
-        ar: "بوابة إلكترونية مركزية لإدارة دورات الموافقات الإدارية، طلبات الموظفين، وأرشفة الوثائق الرسمية إلكترونيًا.",
-        en: "A unified internal portal streamlining managerial approval chains, internal requisitions, and digital document archiving."
+        ar: "نظام لإدارة عمليات الفوترة، إصدار الفواتير، تتبع المدفوعات والتحصيلات، وإنتاج تقارير مالية لتحسين الكفاءة المحاسبية.",
+        en: "Developed an invoicing system to manage billing operations, generate invoices, track payments, and produce financial reports to improve accounting efficiency."
       },
       fullDescription: {
-        ar: "تطبيق ويب تفاعلي استبدل المعاملات الورقية المعقدة بمسار عمل رقمي ذكي يمر بمراحل اعتماد محددة تلقائيًا، مع إشعارات فورية وإمكانية توقيع وطباعة النماذج بضغطة زر واحدة.",
-        en: "Eliminated paper-based bureaucratic workflows by introducing an automated multi-step requisition pipeline with dynamic form validation, status tracking, and audit-ready PDF generation."
+        ar: "نظام محاسبي وتنظيمي مخصص يهدف إلى أتمتة دورة الفوترة المالية بالكامل. يتيح للمؤسسات إنشاء فواتير احترافية، تسجيل الدفعات الجزئية والكلية، تتبع الفواتير المتأخرة، وإصدار كشوفات حساب دقيقة وتقارير مالية دورية.",
+        en: "A robust financial billing platform engineered to streamline commercial invoicing workflows. Empowers organizations to issue professional invoices, track payment reconciliations, monitor overdue receivables, and generate fiscal statements."
       },
       problem: {
-        ar: "ضياع المعاملات الورقية وتأخر اعتماد المراسلات لعدة أيام لعدم معرفة مكان المعاملة الحالي ومن هو المسؤول المنتظر.",
-        en: "Internal approval bottlenecks and misplaced paper documentation caused significant operational delays and lack of accountability."
+        ar: "الأخطاء اليدوية في تسجيل الفواتير، صعوبة متابعة المستحقات والتحصيلات المتأخرة، وضياع الوقت في إعداد التقارير المالية.",
+        en: "Manual invoice generation caused billing discrepancies, untracked payment delays, and inefficient manual compilation of end-of-month statements."
       },
       solution: {
-        ar: "بناء مسار موافقات مرن يتيح لكل قسم متابعة معاملاته في ثوانٍ، مدعومًا بواجهات Livewire المباشرة وسجلات تدقيق واضحة.",
-        en: "Constructed a dynamic state-machine workflow with Livewire and Tailwind CSS, providing full transparency into approval stages and historical decisions."
+        ar: "بناء نظام موحد باستخدام Laravel وMySQL مع معالجة المعاملات المالية بدقة متناهية، ونظام حساب تلقائي للضرائب والخصومات، وتوليد فوري للفواتير بصيغة PDF قابلة للطباعة.",
+        en: "Constructed a centralized invoicing system utilizing Laravel, MySQL, and Tailwind CSS. Implemented automated balance calculations, status tracking (Paid, Pending, Overdue), and instant PDF invoice generation."
       },
-      category: 'tall',
+      category: 'systems',
       categoryLabel: {
-        ar: "حزمة TALL والأتمتة",
-        en: "TALL Stack & Automation"
+        ar: "الأنظمة المالية والمحاسبية",
+        en: "Financial & Billing Systems"
       },
-      technologies: ["PHP", "Laravel", "Livewire", "Alpine.js", "Tailwind CSS", "MySQL"],
+      technologies: ["Laravel", "PHP", "Laravel Sanctum", "MySQL", "JavaScript", "Tailwind CSS", "HTML/CSS"],
       role: {
-        ar: "مطوّرة Full-Stack",
+        ar: "مطوّر النظام بالكامل (Full-Stack Developer)",
         en: "Full-Stack Developer"
       },
       keyFeatures: {
         ar: [
-          "محرك موافقات متعدد المراحل مع إمكانية الرفض مع ذكر السبب أو الإحالة",
-          "نماذج إدخال ديناميكية ذكية تتحقق من صحة البيانات أثناء الكتابة",
-          "توليد مستندات PDF رسمية معتمدة مع باركود تتبع فريد",
-          "لوحة مؤشرات توضح زمن إنجاز المعاملات ومتوسط سرعة الاعتماد"
+          "إنشاء وإصدار فواتير بيع وشراء مفصلة مع بنود مخصصة والضرائب والخصومات",
+          "تتبع حالات السداد (مدفوعة بالكامل، مدفوعة جزئيًا، متأخرة)",
+          "سجل حركات الدفع والتحصيل وتوثيق طرق السداد المختلفة",
+          "إنتاج تقارير مالية محاسبية دورية وكشوفات حساب عملاء وموردين",
+          "طباعة وتصدير الفواتير بتصميم احترافي متجاوب"
         ],
         en: [
-          "Configurable multi-stage approval engine with conditional routing and feedback notes",
-          "Dynamic interactive forms with real-time field validation without page reloads",
-          "Automated certified PDF document compilation with unique verification QR/barcodes",
-          "Operational metrics visualizer tracking average approval turnaround times"
+          "Itemized invoice generation with dynamic tax, discount, and total computations",
+          "Real-time payment status tracking (Fully Paid, Partially Paid, Overdue)",
+          "Transaction payment logs supporting diverse payment methods and receipt numbers",
+          "Automated financial accounting summaries and client statement generation",
+          "Clean printable PDF export formatted for business documentation"
         ]
       },
       technicalChallenges: {
-        ar: "تصميم هيكل قاعدة بيانات مرن يسمح بإضافة خطوات اعتماد جديدة دون الحاجة لإعادة كتابة كود النظام الأساسي.",
-        en: "Designing a modular schema representing dynamic state progressions without requiring hardcoded schema alterations for new approval hierarchies."
+        ar: "ضمان دقة العمليات الحسابية للأرقام العشرية ومنع التضارب في أرقام تسلسل الفواتير عند الحفظ المتزامن.",
+        en: "Enforcing sequential invoice numbering constraints and preventing decimal rounding discrepancies using database transactions."
       },
       results: {
-        ar: "تسريع دورة اعتماد الطلبات من 4 أيام إلى أقل من ساعتين فقط.",
-        en: "Reduced average corporate request approval cycle from 4 days to under 2 hours."
+        ar: "رفع الكفاءة المحاسبية بنسبة ملحوظة وتسريع إصدار الفواتير وتحصيل المدفوعات.",
+        en: "Enhanced organizational billing turnaround and provided crystal-clear tracking of outstanding accounts receivable."
       },
       image: "/src/assets/images/project_erp_systems_1791580655363.jpg",
       githubUrl: "https://github.com/tizee511",
       liveUrl: undefined,
-      isFeatured: false
+      isFeatured: true
+    },
+    {
+      id: "school-management-system",
+      title: {
+        ar: "نظام إدارة المدارس والعمليات الأكاديمية (School Management System)",
+        en: "School Management System"
+      },
+      shortDescription: {
+        ar: "نظام متكامل لمعالجة سجلات الطلاب، إدارة الفصول، تتبع الحضور والغياب، وإصدار التقارير الإدارية لدعم العمليات الأكاديمية اليومية.",
+        en: "Developed a school management system to handle student records, class management, attendance tracking, and administrative reporting to support daily academic operations."
+      },
+      fullDescription: {
+        ar: "تطبيق ويب إداري شامل مصمم للمدارس والمؤسسات التعليمية. يقوم النظام بأتمتة إدارة بيانات الطلاب والمعلمين، توزيع الفصول والشعب الدراسية، تسجيل وتتبع الحضور والغياب اليومي بدقة، وإصدار تقارير الأداء الأكاديمي والشهادات.",
+        en: "A comprehensive educational portal developed to modernize school operations. Organizes student admission records, teacher allocations, class timetables, daily attendance tracking, and administrative reporting."
+      },
+      problem: {
+        ar: "الاعتماد على السجلات الورقية في تسجيل الحضور والغياب وصعوبة الوصول السريع لبيانات وسجلات الطلاب الأكاديمية.",
+        en: "Paper-based student rosters, cumbersome attendance recording, and delayed compilation of academic records and administrative reports."
+      },
+      solution: {
+        ar: "تطوير نظام ويب آمن عبر Laravel وMySQL يتيح للمشرفين والمعلمين تسجيل الحضور والدرجات بضغطة زر مع صلاحيات مخصصة لكل مستخدم.",
+        en: "Built a secure, modular school management solution with Laravel and MySQL, enabling automated daily attendance logs, grade recording, and streamlined roster management."
+      },
+      category: 'systems',
+      categoryLabel: {
+        ar: "الأنظمة التعليمية والإدارية",
+        en: "Educational & School Systems"
+      },
+      technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+      role: {
+        ar: "مطوّر الويب وهندسة النظام (Web Developer)",
+        en: "Web Developer & System Architect"
+      },
+      keyFeatures: {
+        ar: [
+          "إدارة سجلات وملفات الطلاب الشخصية والأكاديمية",
+          "تنظيم وتوزيع الفصول الدراسية والمناهج وتعيين المعلمين",
+          "وحدة تسجيل الحضور والغياب اليومي مع كشوفات تفصيلية",
+          "إصدار التقارير الإدارية والأكاديمية لدعم القرارات المدرسية",
+          "واجهة مستخدم واضحة وسريعة الاستجابة للهواتف والأجهزة المكتبية"
+        ],
+        en: [
+          "Comprehensive student academic profiling and enrollment registry",
+          "Class, grade, and section schedule organization with teacher assignments",
+          "Daily attendance logging module with automatic absent notification tracking",
+          "Automated administrative and performance report generation",
+          "Responsive, accessible interface tailored for academic administrative staff"
+        ]
+      },
+      technicalChallenges: {
+        ar: "تصميم هيكل قاعدة بيانات علائقي مرن يربط بين الفصول والطلاب والمواد دون تكرار للبيانات.",
+        en: "Architecting a multi-relational database schema connecting classes, students, subjects, and attendance without redundancy."
+      },
+      results: {
+        ar: "تسهيل العمليات الأكاديمية اليومية وتوفير ساعات عمل يومية على الكادر الإداري للمدرسة.",
+        en: "Drastically accelerated daily academic record-keeping and streamlined school administrative workflows."
+      },
+      image: "/src/assets/images/project_school_system_1791586367897.jpg",
+      githubUrl: "https://github.com/tizee511",
+      liveUrl: undefined,
+      isFeatured: true
+    },
+    {
+      id: "hospital-management-system",
+      title: {
+        ar: "نظام إدارة المستشفيات والعيادات الطبية (Hospital Management System)",
+        en: "Hospital Management System"
+      },
+      shortDescription: {
+        ar: "نظام للتعامل مع سجلات المرضى الطبية، تنظيم المواعيد الطبية، وإدارة عمليات الفوترة والخدمات العلاجية.",
+        en: "Handles patient records, appointments, and billing to streamline medical operations and clinical record management."
+      },
+      fullDescription: {
+        ar: "منظومة طبية متكاملة مصممة لإدارة وتسهيل تدفق العمل داخل المستشفيات والعيادات. يغطي النظام ملفات المرضى وتاريخهم الطبي، حجز وجدولة مواعيد الأطباء، وإصدار فواتير الخدمات الطبية والأدوية، لضمان خدمة سريعة وموثوقة للمرضى.",
+        en: "An integrated healthcare administrative application engineered for clinics and hospitals. Centralizes medical patient history records, doctor appointment scheduling, and patient billing invoicing."
+      },
+      problem: {
+        ar: "تكدس المرضى وبطء حجز المواعيد وصعوبة متابعة ملفات وتاريخ المرضى الطبية وفواتير العلاج.",
+        en: "Clinic queues, appointment overlapping, fragmented medical histories, and cumbersome manual medical billing."
+      },
+      solution: {
+        ar: "تطوير نظام رصين باستخدام Laravel وMySQL لحفظ السجلات الطبية بسرية وأمان، وتوفير جدول مواعيد تفاعلي للأطباء وإدارة متكاملة للفواتير الطبية.",
+        en: "Developed a robust medical management platform with Laravel, MySQL, and Tailwind CSS, featuring confidential patient registries, doctor scheduling calendars, and accurate treatment billing."
+      },
+      category: 'systems',
+      categoryLabel: {
+        ar: "الأنظمة الطبية والصحية",
+        en: "Healthcare & Hospital Systems"
+      },
+      technologies: ["Laravel", "PHP", "Laravel Sanctum", "MySQL", "JavaScript", "Tailwind CSS", "HTML/CSS"],
+      role: {
+        ar: "مطوّر النظام والواجهة الخلفية (Full-Stack Developer)",
+        en: "Full-Stack Developer"
+      },
+      keyFeatures: {
+        ar: [
+          "إدارة السجلات الطبية للمرضى والتشخيصات والزيارات السابقة",
+          "جدولة وتنظيم مواعيد الأطباء والعيادات التخصصية",
+          "إصدار ومتابعة فواتير الخدمات الطبية والفحوصات",
+          "إدارة كادر الأطباء والتمريض والصلاحيات الأمنية",
+          "إحصائيات سريرية وتقارير استيعاب المرضى"
+        ],
+        en: [
+          "Confidential patient medical record archive and diagnosis logs",
+          "Interactive doctor appointment scheduling and booking calendar",
+          "Medical service, diagnostic, and laboratory billing invoicing",
+          "Staff and physician directory with strict access control gates",
+          "Clinical statistics and patient admission metrics"
+        ]
+      },
+      technicalChallenges: {
+        ar: "الحفاظ على سرية وخصوصية البيانات الطبية ومنع تعارض المواعيد الزمنية للطبيب الواحد.",
+        en: "Enforcing strict authorization policies for sensitive medical records and preventing double-booking of doctor appointment slots."
+      },
+      results: {
+        ar: "تحسين تجربة المرضى وتنظيم مواعيد العيادات بدقة وكفاءة عالية.",
+        en: "Delivered orderly appointment scheduling and centralized clinical administrative record keeping."
+      },
+      image: "/src/assets/images/project_hospital_system_1791586356644.jpg",
+      githubUrl: "https://github.com/tizee511",
+      liveUrl: undefined,
+      isFeatured: true
+    },
+    {
+      id: "ecommerce-store",
+      title: {
+        ar: "متجر التجارة الإلكترونية المتكامل (E-commerce Store)",
+        en: "E-commerce Store & Order Hub"
+      },
+      shortDescription: {
+        ar: "متجر إلكتروني متكامل يتميز بكتالوج المنتجات، معالجة وتتبع الطلبات، وإدارة حسابات المستخدمين.",
+        en: "Features product catalogs, order processing, and user management for modern digital commerce."
+      },
+      fullDescription: {
+        ar: "منصة تجارة إلكترونية سريعة ومتجاوبة مبنية لتوفير تجربة تسوق مريحة. تحتوي على كتالوج تفاعلي للمنتجات، سلة تسوق ديناميكية، معالجة دورة حياة الطلبات من الشراء حتى التسليم، ولوحة تحكم لإدارة المنتجات والمخزون والمستخدمين.",
+        en: "A modern responsive e-commerce web platform engineered for seamless purchasing. Features categorized product catalog browsing, dynamic shopping cart management, order dispatch tracking, and merchant administration."
+      },
+      problem: {
+        ar: "بطء المتاجر التقليدية وصعوبة إدارة الطلبات وتتبع حالات الدفع والشحن للمنتجات.",
+        en: "Slow page load times on legacy platforms, complex checkout flows, and inefficient backend order tracking."
+      },
+      solution: {
+        ar: "بناء المتجر باستخدام Laravel وTailwind CSS وMySQL مع توفير مصادقة آمنة عبر Laravel Sanctum، وتجربة تسوق سريعة ومتوافقة مع شاشات الهواتف.",
+        en: "Built a sleek, high-speed online storefront with Laravel, Tailwind CSS, and MySQL, protected by Laravel Sanctum token security and featuring optimized mobile navigation."
+      },
+      category: 'ecommerce',
+      categoryLabel: {
+        ar: "التجارة الإلكترونية والمتاجر",
+        en: "E-Commerce & Digital Stores"
+      },
+      technologies: ["Laravel", "PHP", "Laravel Sanctum", "MySQL", "JavaScript", "Tailwind CSS", "HTML/CSS"],
+      role: {
+        ar: "مطوّر المتجر الإلكتروني (Full-Stack Developer)",
+        en: "Full-Stack Developer"
+      },
+      keyFeatures: {
+        ar: [
+          "كتالوج منتجات تفاعلي مع تصنيفات وفلاتر بحث سريعة",
+          "سلة تسوق مرنة وتحديث فوري للكميات والأسعار",
+          "معالجة وتتبع دورة حياة الطلبات (جديد، قيد التجهيز، مكتمل)",
+          "إدارة حسابات العملاء وسجل الطلبات السابقة",
+          "لوحة تحكم إدارية لإضافة وتعديل المنتجات ومتابعة المبيعات"
+        ],
+        en: [
+          "Dynamic product catalog with instant category filtering and search",
+          "Reactive shopping cart with real-time subtotal and tax calculation",
+          "Order fulfillment workflow tracking from checkout to delivery",
+          "Customer authentication and historical purchase tracking",
+          "Merchant dashboard for catalog curation and order management"
+        ]
+      },
+      technicalChallenges: {
+        ar: "إدارة جلسات السلة وتحديث كميات المخزون المتاحة بأمان عند تأكيد الطلب.",
+        en: "Safely locking stock availability and managing cart session states during checkout spikes."
+      },
+      results: {
+        ar: "تجربة تصفح وتسوق سلسة ومعدل إتمام طلبات سريع وخالٍ من التعقيد.",
+        en: "Delivered a lightweight, highly responsive storefront with smooth checkout flows."
+      },
+      image: "/src/assets/images/project_ecommerce_platform_1791580666034.jpg",
+      githubUrl: "https://github.com/tizee511",
+      liveUrl: undefined,
+      isFeatured: true
     }
   ] as Project[],
 
   experience: [
     {
-      id: "exp-1",
+      id: "exp-yemen-naql",
       role: {
-        ar: "مطوّرة Full-Stack ونظم ويب مستقلة",
-        en: "Full-Stack Developer & Systems Specialist"
+        ar: "مطوّر لوحة التحكم الإدارية (Administrative Dashboard Developer)",
+        en: "Administrative Dashboard Developer"
       },
       companyOrContext: {
-        ar: "مشاريع تقنية وأنظمة أعمال مخصصة",
-        en: "Independent Tech Projects & Client Systems"
+        ar: "نظام يمن نقل - مشروع التخرج (Yemen Naql System)",
+        en: "Yemen Naql System – Graduation Project"
       },
       period: {
-        ar: "2023 - حتى الآن (3 سنوات خبرة تراكمية)",
-        en: "2023 - Present (3 Years Cumulative Experience)"
+        ar: "2025 - حتى الآن",
+        en: "2025 – Present"
       },
       location: {
-        ar: "صنعاء، اليمن (وعمل عن بُعد)",
-        en: "Sana'a, Yemen & Remote"
+        ar: "صنعاء، اليمن",
+        en: "Sana’a, Yemen"
       },
       type: {
-        ar: "عمل حر وعقود تطوير",
-        en: "Freelance & Contract"
+        ar: "مشروع تخرج ونظام مؤسسي متكامل",
+        en: "Graduation Project & Enterprise System"
       },
       description: {
-        ar: "قيادة وتطوير تطبيقات الويب المتكاملة للشركات والمؤسسات، مع التركيز على بناء نظم ERP مخصصة، وأتمتة مسارات العمل، وبناء واجهات تفاعلية وسريعة باستخدام حزمة TALL وPHP.",
-        en: "Leading the development of end-to-end web applications and business portals, focusing on custom ERP workflows, API gateways, and reactive TALL stack implementations."
+        ar: "تطوير لوحة تحكم إدارية متكاملة عبر الويب لنظام يمن نقل، مما مكّن من إدارة السائقين والعملاء وعمليات الرحلات وتكوين الأسعار وميزات إعداد التقارير الإدارية والتشغيلية.",
+        en: "Developed a web-based administrative dashboard for Yemen Naql, enabling management of drivers, customers, trip operations, pricing configurations, and reporting functionalities."
       },
       responsibilities: {
         ar: [
-          "تصميم وبناء تطبيقات ويب كاملة من الصفر باستخدام PHP Native وLaravel وLivewire",
-          "تخطيط وهيكلة قواعد بيانات MySQL المعقدة وتطبيق أفضل ممارسات الفهرسة وتطبيع الجداول",
-          "تطوير واجهات مستخدم متجاوبة تمامًا وعصرية باستخدام Tailwind CSS وAlpine.js",
-          "إعداد حاويات Docker لتوحيد بيئات التطوير والتشغيل وضمان الاستقرار العالي",
-          "تحسين أداء الاستعلامات البطيئة وخفض استهلاك موارد الخادم بنسب ملحوظة"
+          "تطوير لوحة تحكم إدارية لنظام يمن نقل تمكّن من إدارة السائقين، العملاء، عمليات الرحلات، وتكوين الأسعار وميزات إعداد التقارير",
+          "بناء واجهات تحكم متجاوبة ووحدات إدارية لتسهيل وتنظيم عمليات النقل وتعزيز كفاءة المراقبة والتحكم باستخدام تقنيات تطوير الويب الحديثة",
+          "تصميم مخطط قاعدة البيانات العلائقية وهيكلة جداول السائقين والرحلات والأسعار بكفاءة عالية",
+          "تأمين الواجهات البرمجية وتطبيق صلاحيات وصول إدارية محكمة وفق معايير MVC"
         ],
         en: [
-          "Architecting full-stack web applications from concept to deployment using PHP, Laravel, and Livewire",
-          "Designing normalized MySQL relational database schemas with optimized indexes and concurrency handling",
-          "Building sleek, accessible, responsive user interfaces using Tailwind CSS and Alpine.js",
-          "Standardizing developer environments and deployment pipelines with Docker and Docker Compose",
-          "Profiling slow SQL queries and tuning server response times for optimal throughput"
+          "Developed a web-based administrative dashboard for Yemen Naql, enabling management of drivers, customers, trip operations, pricing configurations, and reporting functionalities.",
+          "Built responsive dashboard interfaces and administrative modules to streamline transport operations and enhance monitoring efficiency using modern web development technologies.",
+          "Architected normalized relational database schemas for drivers, trips, fares, and analytical audit logs.",
+          "Implemented secure administrative authorization gates and robust RESTful API endpoints."
         ]
       },
-      techStack: ["PHP", "Laravel", "TALL Stack", "MySQL", "Docker", "REST APIs", "Git"]
+      techStack: ["Laravel", "PHP", "MySQL", "JavaScript", "Tailwind CSS", "RESTful APIs", "Git"]
     },
     {
-      id: "exp-2",
+      id: "exp-freelance-dev",
       role: {
-        ar: "مطوّرة واجهات أمامية وخلفية (Full-Stack Engineer)",
-        en: "Web Application & Backend Engineer"
+        ar: "مطوّر ويب ونظم برمجية (Web Developer)",
+        en: "Web Developer & Systems Builder"
       },
       companyOrContext: {
-        ar: "مشاريع برمجية تجارية وحلول رقمية",
-        en: "Commercial Software Solutions & Portals"
+        ar: "مشاريع برمجية متكاملة وحلول ويب تجارية",
+        en: "Integrated Software Solutions & Commercial Web Projects"
       },
       period: {
-        ar: "2022 - 2023",
-        en: "2022 - 2023"
+        ar: "خبرة عملية متواصلة (أكثر من سنتين)",
+        en: "Over 2 Years Practical Experience"
       },
       location: {
         ar: "اليمن",
         en: "Yemen"
       },
       type: {
-        ar: "تطوير تطبيقات ومشاريع",
-        en: "Software Development"
+        ar: "تطوير برمجيات ونظم مؤسسية",
+        en: "Software Engineering & Solutions"
       },
       description: {
-        ar: "تطوير وحدات برمجية مخصصة للتحكم في البيانات، ربط واجهات API الخارجية، وبناء لوحات التحكم التفاعلية للمؤسسات.",
-        en: "Engineered administrative dashboards, automated business reporting engines, and integrated third-party REST web services."
+        ar: "بناء وتطوير حلول برمجية متكاملة باستخدام PHP وLaravel، بما في ذلك نظام إدارة الفواتير، نظام إدارة المدارس، نظام إدارة المستشفيات، والمتاجر الإلكترونية.",
+        en: "Engineered integrated software solutions using PHP and Laravel, including an Invoice Management System, School Management System, Hospital Management System, and E-commerce Stores."
       },
       responsibilities: {
         ar: [
-          "برمجة نقاط اتصال RESTful APIs محمية ومعالجة البيانات بصيغة JSON بسرعة وكفاءة",
-          "بناء أنظمة المصادقة والصلاحيات متعددة المستويات (Role-Based Permissions)",
-          "تحويل تصاميم واجهات المستخدم إلى كود نظيف ومتجاوب يتوافق مع مختلف أحجام الشاشات",
-          "إجراء اختبارات الجودة وحل المشكلات التقنية وتوثيق الكود البرمجي بوضوح"
+          "كتابة كود PHP وLaravel نظيف وآمن وفق معمارية MVC وتطبيق أفضل ممارسات هندسة البرمجيات",
+          "تصميم قواعد بيانات MySQL وتطبيع الجداول وتحسين استعلامات SQL",
+          "بناء واجهات مستخدم متجاوبة وحديثة باستخدام Tailwind CSS وجافاسكريبت وHTML وCSS",
+          "دمج حزم المصادقة والأمان مثل Laravel Sanctum لحماية الواجهات البرمجية",
+          "إدارة الإصدارات البرمجية عبر Git & GitHub وتوثيق الكود بدقة"
         ],
         en: [
-          "Developed secure, sanitized RESTful API endpoints handling JSON payloads",
-          "Implemented multi-tenant authentication systems and role-based authorization gates",
-          "Converted UI prototypes into clean, maintainable, responsive Tailwind CSS layouts",
-          "Conducted debugging, performance tuning, and technical documentation"
+          "Wrote clean, secure PHP and Laravel code adhering to MVC architecture and software engineering best practices",
+          "Designed and optimized MySQL relational database schemas, transactions, and SQL queries",
+          "Crafted modern, fluid, responsive user interfaces using Tailwind CSS, JavaScript, HTML, and CSS",
+          "Integrated authentication and authorization mechanisms including Laravel Sanctum for API security",
+          "Maintained rigorous version control workflows with Git and GitHub"
         ]
       },
-      techStack: ["PHP Native", "Laravel", "MySQL", "Tailwind CSS", "JavaScript", "HTML/CSS"]
-    },
-    {
-      id: "exp-3",
-      role: {
-        ar: "مطوّرة ويب ومصممة قواعد بيانات (Junior Web Developer)",
-        en: "Junior Web & Database Developer"
-      },
-      companyOrContext: {
-        ar: "مشاريع عملية وبناء برمجيات تطبيقية",
-        en: "Applied Systems & Practical Implementations"
-      },
-      period: {
-        ar: "2021 - 2022",
-        en: "2021 - 2022"
-      },
-      location: {
-        ar: "اليمن",
-        en: "Yemen"
-      },
-      type: {
-        ar: "تطوير عملي وبداية المسار المهني",
-        en: "Applied Development"
-      },
-      description: {
-        ar: "بناء الأسس البرمجية القوية في كتابة كود PHP نقي، فهم بنية النظم الموجهة للكائنات (OOP)، وإتقان لغة SQL والاستعلامات العلائقية.",
-        en: "Established robust software engineering fundamentals in native PHP, object-oriented design, relational modeling, and version control."
-      },
-      responsibilities: {
-        ar: [
-          "كتابة سكربتات PHP Native لمعالجة مدخلات النماذج وتخزينها في MySQL بأمان",
-          "تطبيق معايير الأمان ضد ثغرات SQL Injection وXSS وCSRF",
-          "استخدام Git لإدارة النسخ وتتبع التغييرات البرمجية بدقة",
-          "تصميم صفحات ويب متناسقة باستخدام CSS وJavaScript الحديث"
-        ],
-        en: [
-          "Wrote clean native PHP scripts sanitizing inputs and persisting data safely into MySQL",
-          "Applied security invariants protecting against SQL injection, XSS, and CSRF vulnerabilities",
-          "Utilized Git for atomic commits and branch-based workflow collaboration",
-          "Constructed semantic, accessible responsive layouts using modern CSS and JavaScript"
-        ]
-      },
-      techStack: ["PHP Native", "MySQL", "JavaScript", "HTML5", "CSS3", "Git"]
+      techStack: ["PHP", "Laravel", "Laravel Sanctum", "MySQL", "Tailwind CSS", "JavaScript", "HTML/CSS", "Git"]
     }
   ] as ExperienceItem[],
 
@@ -717,163 +716,194 @@ export const PORTFOLIO_DATA = {
     {
       id: "srv-webapp",
       title: {
-        ar: "تطوير تطبيقات الويب المتكاملة (Custom Web Apps)",
-        en: "Custom Full-Stack Web Applications"
+        ar: "تطوير تطبيقات ولوحات تحكم الويب (Web Dashboards & Apps)",
+        en: "Custom Web Applications & Admin Dashboards"
       },
       description: {
-        ar: "بناء تطبيقات ويب مخصصة وسريعة من الصفر تلائم طبيعة عملك بدقة، مع لوحات تحكم مرنة وتجربة مستخدم سلسة واستقرار عالي.",
-        en: "End-to-end bespoke web application development tailored specifically to your business workflows, with high stability and fast execution."
+        ar: "بناء لوحات تحكم إدارية وتطبيقات ويب متكاملة باستخدام PHP وLaravel مع واجهات متجاوبة وسريعة تمنحك تحكمًا كاملاً في بياناتك وعملياتك.",
+        en: "Building bespoke administrative dashboards and web applications with PHP / Laravel, providing complete control over business operations."
       },
       scope: {
         ar: [
-          "تحليل المتطلبات وهيكلة منطق العمل بدقة",
-          "واجهات تفاعلية وسريعة باستخدام حزمة TALL (Tailwind + Alpine + Laravel + Livewire)",
-          "لوحات تحكم إدارية مرنة مع تقارير تفاعلية",
-          "حماية أمنية مشددة للمعلومات والبيانات الحساسة"
+          "تحليل متطلبات العمل وهيكلة منطق النظام بدقة",
+          "بناء لوحات تحكم إدارية متجاوبة وسريعة (Admin Dashboards)",
+          "تأمين النظام ومصادقة المستخدمين عبر Laravel Sanctum",
+          "تصدير التقارير الإدارية والإحصائية التفصيلية"
         ],
         en: [
-          "Requirements analysis and architectural blueprint design",
-          "Reactive, modern UI powered by the TALL stack",
-          "Rich administrative control portals with dynamic analytics",
-          "Strict data privacy, encryption, and authorization checks"
+          "Operational requirement analysis and system architecture",
+          "Responsive, fast administrative dashboards and control modules",
+          "Secure user authentication powered by Laravel Sanctum",
+          "Detailed administrative and statistical reporting exports"
         ]
       },
       deliverables: {
-        ar: "تطبيق ويب جاهز للتشغيل مع الكود المصدري وبيئة Docker كاملة وتوثيق التشغيل.",
-        en: "Production-ready web application with clean source code, Docker configs, and setup documentation."
+        ar: "لوحة تحكم إدارية جاهزة للتشغيل مع كود نظيف وتوثيق كامل.",
+        en: "Production-ready administrative web system with clean, maintainable code."
       }
     },
     {
       id: "srv-systems",
       title: {
-        ar: "بناء نظم إدارة العمليات والمخزون (ERP & Systems)",
-        en: "ERP, Inventory & Workflow Systems"
+        ar: "بناء النظم الإدارية والمؤسسية (Management Systems)",
+        en: "Enterprise & Organizational Management Systems"
       },
       description: {
-        ar: "أتمتة الأعمال الإدارية والمخزنية وسلاسل التوريد المعقدة وتحويلها إلى نظام رقمي موحد يقضي على الأخطاء اليدوية ويوفر الوقت.",
-        en: "Digitizing and automating operational workflows, warehouse inventory, order pipelines, and department approval chains."
+        ar: "تطوير أنظمة متخصصة مثل إدارة الفواتير والمدفوعات، إدارة المدارس، إدارة المستشفيات والعيادات، ونظم النقل اللوجستية.",
+        en: "Developing specialized business systems such as invoicing, school management, hospital workflows, and transport logistics."
       },
       scope: {
         ar: [
-          "تتبع المخزون والوارد والصادر والأصناف الحرجة",
-          "مسارات اعتماد وموافقات إلكترونية متعددة المستويات",
-          "تصدير واستيراد التقارير التلقائية بصيغ Excel وPDF",
-          "سجل تدقيق كامل لكافة الأنشطة والعمليات"
+          "نظم إدارة الفواتير وتتبع المدفوعات والتحصيلات",
+          "نظم إدارة المدارس وشؤون الطلاب والحضور",
+          "نظم إدارة المستشفيات والملفات الطبية والمواعيد",
+          "أتمتة العمليات اليومية وتوليد التقارير المالية والإدارية"
         ],
         en: [
-          "Stock tracking, batch numbers, and reorder threshold automation",
-          "Multi-tier digital approval matrices and task assignment",
-          "Automated financial & inventory export reports (Excel/PDF)",
-          "Comprehensive immutable audit logging for accountability"
+          "Invoicing and payment tracking systems",
+          "School management, academic rosters, and attendance portals",
+          "Hospital management, patient registries, and appointment booking",
+          "Workflow automation and automated financial/administrative reporting"
         ]
       },
       deliverables: {
-        ar: "نظام إداري مركزي وموثوق ومخصص بالكامل وقابل للتوسع المستقبلي.",
-        en: "Robust, tailored operational system designed for continuous growth and business scale."
+        ar: "نظام مؤسسي مخصص وموثوق يلبي احتياجات قطاع العمل بالكامل.",
+        en: "Tailored management system built for high reliability and operational accuracy."
       }
     },
     {
       id: "srv-database",
       title: {
-        ar: "تصميم وتحسين قواعد بيانات MySQL (Database Tuning)",
-        en: "MySQL Database Design & Query Optimization"
+        ar: "تصميم وهيكلة قواعد البيانات (SQL & MySQL Design)",
+        en: "Relational Database Design & SQL Optimization"
       },
       description: {
-        ar: "إعادة هيكلة قواعد البيانات، فهرسة الجداول، وتحسين الاستعلامات البطيئة لرفع سرعة الاستجابة ومنع تجميد النظام عند ضغط العمل.",
-        en: "Relational schema design, query profiling, index optimization, and resolving bottlenecks under heavy multi-user loads."
+        ar: "تصميم مخططات قواعد بيانات MySQL علائقية نظيفة وموزونة، تطبيع الجداول، وتحسين أداء الاستعلامات لضمان أعلى سرعة واستقرار.",
+        en: "Designing clean normalized MySQL schemas, relational keys, transaction management, and query optimization."
       },
       scope: {
         ar: [
-          "تصميم مخططات علائقية متوازنة وتطبيع الجداول (Normalization)",
-          "تحليل الاستعلامات البطيئة عبر EXPLAIN وفهرسة المفاتيح المناسبة",
-          "ضبط المعاملات البنكية (ACID Transactions) لضمان سلامة البيانات",
-          "استراتيجيات النسخ الاحتياطي والأرشفة الدورية"
+          "تصميم المخططات العلائقية وتطبيع الجداول (Normalization)",
+          "بناء العلاقات والمفاتيح الخارجية وفهرسة الجداول",
+          "ضبط المعاملات المالية (ACID Transactions) لضمان سلامة البيانات",
+          "تحسين استعلامات SQL ورفع سرعة الاستجابة"
         ],
         en: [
-          "Normalized relational database modeling and relationship integrity",
-          "Query optimization with EXPLAIN plans and tailored B-Tree indexing",
-          "Concurrency control and ACID transactions for financial-grade data integrity",
-          "Automated backup strategies and data retention policies"
+          "Relational schema modeling and database normalization",
+          "Foreign keys, indexes, and relationship integrity",
+          "ACID transactions guaranteeing financial and operational consistency",
+          "SQL query profiling and response time tuning"
         ]
       },
       deliverables: {
-        ar: "مخطط قاعدة بيانات عالي الأداء مع تقرير تحسين الاستعلامات واستقرار وسرعة مضاعفة.",
-        en: "Optimized database architecture, query profiling report, and drastically lower latency."
+        ar: "قاعدة بيانات متينة وعالية الأداء مع مخططات علائقية موثقة.",
+        en: "Optimized, documented relational database schema delivering high reliability."
       }
     },
     {
       id: "srv-apis",
       title: {
-        ar: "تطوير واجهات RESTful APIs والربط مع الخدمات",
-        en: "RESTful API Engineering & 3rd-Party Integrations"
+        ar: "تطوير واجهات RESTful APIs وتأمينها (API Engineering)",
+        en: "RESTful API Engineering & Integration"
       },
       description: {
-        ar: "إنشاء واجهات برمجية قياسية لربط تطبيقات الويب بالهواتف أو الخدمات الخارجية، مع تأمين بوابات الدفع والرسائل النصية والـ Webhooks.",
-        en: "Building standardized, secure REST APIs for web/mobile sync, payment gateways, messaging services, and external microservices."
+        ar: "بناء وتوثيق واجهات برمجية قياسية لربط تطبيقات الويب بالهواتف والخدمات الخارجية مع تأمينها بالكامل عبر Tokens وSanctum.",
+        en: "Engineering clean, secure RESTful APIs for web/mobile interoperability, secured by Laravel Sanctum token protocols."
       },
       scope: {
         ar: [
-          "هندسة واجهات برمجية منظمة وفق معايير RESTful",
-          "تأمين المصادقة عبر Tokens وتحديد معدلات الاستخدام (Rate Limiting)",
-          "الربط مع بوابات الدفع الإلكتروني واستقبال الـ Webhooks بأمان",
-          "توثيق الواجهات البرمجية وتوفير مجموعات Postman للاختبار"
+          "تصميم وتطوير نقاط اتصال RESTful APIs منظمة",
+          "تأمين المصادقة والصلاحيات عبر Laravel Sanctum",
+          "معالجة البيانات والتحقق من صحة المدخلات بدقة",
+          "توثيق الواجهات البرمجية وتجهيزها للاختبار والتكامل"
         ],
         en: [
-          "RESTful endpoint architecture following best API design conventions",
-          "Token authentication (Sanctum/JWT) and burst rate limiting",
-          "Payment gateway, SMS, and transactional webhook integration",
-          "Interactive API documentation and comprehensive Postman collection"
+          "Standardized RESTful API endpoint design and implementation",
+          "Token-based authentication and authorization gates via Laravel Sanctum",
+          "Strict input payload validation and JSON responses",
+          "Comprehensive API documentation for seamless client integration"
         ]
       },
       deliverables: {
-        ar: "واجهات برمجية آمنة وموثقة تمامًا مع أمثلة للاستخدام وتدابير الحماية.",
-        en: "Clean, documented, secure API layer with test suites and integration guides."
+        ar: "واجهات برمجية آمنة وسريعة وموثقة جاهزة للربط الفوري.",
+        en: "Clean, documented, high-speed API layer ready for immediate integration."
       }
     }
   ] as ServiceItem[],
 
   education: [
     {
-      id: "edu-1",
+      id: "edu-alrazi",
       degree: {
-        ar: "بكالوريوس في علوم الحاسوب / تقنية المعلومات",
-        en: "Bachelor's Degree in Computer Science / Information Technology"
+        ar: "بكالوريوس في تقنية المعلومات (B.Sc. Information Technology)",
+        en: "B.Sc. Information Technology"
       },
       institution: {
-        ar: "جامعة معتمدة - صنعاء، اليمن",
-        en: "Accredited University - Sana'a, Yemen"
+        ar: "جامعة الرازي (Al-Razi University) - صنعاء، اليمن",
+        en: "Al-Razi University – Sana’a, Yemen"
       },
       period: {
-        ar: "مؤهل أكاديمي متخصص",
-        en: "Degree Qualification"
+        ar: "التخرج المتوقع: 2026 (Expected Graduation: 2026)",
+        en: "Expected Graduation: 2026"
       },
       details: {
-        ar: "تركيز معمق على هياكل البيانات (Data Structures)، الخوارزميات، هندسة البرمجيات، شبكات الحاسوب، وتصميم قواعد البيانات العلائقية.",
-        en: "In-depth study of data structures, algorithms, software engineering principles, computer networking, and relational database systems."
+        ar: "دراسة أكاديمية متخصصة في تقنية المعلومات وهندسة البرمجيات، وتصميم قواعد البيانات العلائقية، وتطوير الويب، وشبكات الحاسوب، مع إنجاز مشروع تخرج رائد (لوحة تحكم نظام يمن نقل الإدارية).",
+        en: "Academic degree program specializing in software engineering, database design, modern web technologies, and systems development, featuring the flagship Yemen Naql administrative system as a graduation project."
       },
       type: 'degree'
+    }
+  ] as EducationItem[],
+
+  certifications: [
+    {
+      id: "cert-laravel-adv",
+      name: {
+        ar: "إطار عمل لارافيل المتقدم (Advanced Laravel Framework)",
+        en: "Advanced Laravel Framework"
+      },
+      issuer: {
+        ar: "شهادة معتمدة في تقنيات Laravel المتقدمة",
+        en: "Advanced Laravel Certification"
+      },
+      year: "2024"
     },
     {
-      id: "edu-2",
-      degree: {
-        ar: "شهادة معتمدة في هندسة تطبيقات الويب بـ PHP وLaravel",
-        en: "Certified Advanced Web Engineering with PHP & Laravel"
+      id: "cert-laravel-core",
+      name: {
+        ar: "إطار عمل لارافيل (Laravel Framework)",
+        en: "Laravel Framework"
       },
-      institution: {
-        ar: "برامج تدريب مهني متخصصة في تطوير النظم",
-        en: "Professional Systems Engineering Programs"
+      issuer: {
+        ar: "شهادة معتمدة في إطار عمل Laravel",
+        en: "Laravel Framework Certification"
       },
-      period: {
-        ar: "تدريب مهني مستمر ومتقدم",
-        en: "Professional Accreditation"
+      year: "2024"
+    },
+    {
+      id: "cert-uiux",
+      name: {
+        ar: "تصميم واجهات وتجربة المستخدم (UI/UX Design)",
+        en: "UI/UX Design Certification"
       },
-      details: {
-        ar: "تطبيقات عملية مكثفة على نمط MVC، إدارة المعاملات، الحماية البرمجية المتقدمة، وبناء بيئات العمل المعزولة بحاويات Docker.",
-        en: "Intensive hands-on mastery in MVC architecture, database concurrency, secure application coding, and Docker deployment."
+      issuer: {
+        ar: "شهادة متخصصة في تصميم تجربة المستخدم والواجهات",
+        en: "UI/UX Professional Design Certification"
       },
-      type: 'certification'
+      year: "2024"
+    },
+    {
+      id: "cert-photoshop",
+      name: {
+        ar: "الشهادة المهنية الاحترافية في أدوبي فوتوشوب (Adobe Photoshop Professional Certification)",
+        en: "Adobe Photoshop Professional Certification"
+      },
+      issuer: {
+        ar: "شهادة مهنية احترافية معتمدة",
+        en: "Adobe Professional Accreditation"
+      },
+      year: "2023"
     }
-  ] as EducationItem[]
+  ]
 };
 
 export const UI_TRANSLATIONS = {
